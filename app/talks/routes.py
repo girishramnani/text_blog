@@ -8,5 +8,7 @@ from app.talks import talks
 def index():
     return render_template(r"index.html")
 
-
+@talks.route('/user/<user>')
+def user_name(user):
+    return render_template("user.html",user=user)
 
