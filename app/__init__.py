@@ -6,7 +6,10 @@ from flask.ext.bootstrap import Bootstrap
 bootstrap = Bootstrap()
 from flask.ext.sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
-from .model import User
+
+from flask.ext.login import LoginManager
+login_manager = LoginManager()
+login_manager.login_view = 'auth.login'
 
 def create_app(config_name):
     app=Flask(__name__)
@@ -17,6 +20,7 @@ def create_app(config_name):
     app.register_blueprint(talks_blueprint)
     from app.auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint,url_prefix='/auth')
+    login_manager.init_app(app)
     print(app.url_map)
     return app
 

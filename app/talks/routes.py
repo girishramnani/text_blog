@@ -2,7 +2,7 @@ __author__ = 'Girish'
 
 
 from flask import render_template
-
+from app.model import User
 from app.talks import talks
 
 @talks.route('/index')
@@ -10,7 +10,10 @@ from app.talks import talks
 def index():
     return render_template(r"index.html",title="Talks")
 
+
+
 @talks.route('/user/<user>')
 def user_name(user):
-    return render_template("user.html",user=user,title="Talks")
+    temp  =User.query.filter_by(username=user).first_or_404()
+    return render_template("user.html",user=temp,title="Talks")
 
