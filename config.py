@@ -12,7 +12,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SECRET_KEY = 'Top SECRET'
-    SQLALCHEMY_DATABASE_URL = 'sqlite:///' + os.path.join(basedir, 'data-test.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data-test3.sqlite')
 
 
 config = {
