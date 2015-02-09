@@ -46,5 +46,5 @@ class Talk(db.Model):
     description = db.Column(db.Text())
     slides = db.Column(db.Text())
     video = db.Column(db.Text())
-    date = db.Column(db.DateTime())
+    date = db.Column(db.DateTime(),default=datetime.utcnow())
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
