@@ -28,9 +28,9 @@ def user_name(user):
     temp  =User.query.filter_by(username=user).first_or_404()
     return render_template("user.html",user=temp,title="Talks")
 
-@talks.route('/clock')
+@talks.route('/background')
 def clock():
-    return render_template("clock.html")
+    return render_template("background.html")
 
 
 
