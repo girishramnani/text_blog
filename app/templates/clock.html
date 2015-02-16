@@ -1,0 +1,20 @@
+<link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+<link  rel="stylesheet" href="{{  url_for("static",filename="Title.css")}}" >
+<div id="clock-container">
+    {% for r in range(rows) %}
+  <div class="clock-row">
+  {% if r ==rows//2 %}
+      {% for wi in data %}
+     <div class="clock-letter active">{{ wi }}</div>
+    {% endfor %}
+  {% else %}
+    {% for c in range(17)%}
+
+    <div class="clock-letter">{{ func() }}</div>
+
+  {% endfor %}
+  {% endif %}
+        </div>
+  {% endfor %}
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

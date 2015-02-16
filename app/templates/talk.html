@@ -10,16 +10,11 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
+          <div class="jumbotron">
+            <h1>{{ data.title }}</h1>
+            <p>hey</p>
+          </div>
 
-              {% include "clock.html" %}
-
-          <div class="row">
-              {% for talk_ in talks %}
-              {% include "_talk_viewer.html" %}
-              {% endfor %}
-           <!--/.col-xs-6.col-lg-4-->
-
-          </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
       </div>
 

@@ -15,6 +15,7 @@ def create_app(config_name):
     app=Flask(__name__)
     bootstrap.init_app(app)
     db.init_app(app)
+    print(app.url_map)
     app.config.from_object(config[config_name])
     from app.talks import talks as talks_blueprint
     app.register_blueprint(talks_blueprint)

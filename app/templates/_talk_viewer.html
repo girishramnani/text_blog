@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+ <div class="col-xs-6 col-lg-6">
+              <h2>{{ talk_.title }}</h2>
+              <p>{{ talk_.description }}. </p>
+              <p><a class="btn btn-default" href={{ url_for("talks.perma_link",tid=talk_.id)}} role="button">View details &raquo;</a></p>
+            </div>
