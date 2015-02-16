@@ -21,7 +21,9 @@ def index():
     print(talks_data[1].title)
     return render_template(r"index.html",title="Talks",talks=talks_data,func=random_creater,data="TECH TALKS",rows=5)
 
-
+@talks.route('/animate')
+def animate():
+    return render_template("animate.html")
 
 @talks.route('/user/<user>')
 def user_name(user):
